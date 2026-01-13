@@ -17,7 +17,7 @@ public class task_3 {
         int sum = first+second+third;
         int product = first*second*third;
         double average = (first+second+third)/3.0;
-        //had I done the average the same way the previous calculations it would have just rounded up to 4
+        //had I done the average the same way the previous calculations it would have just rounded down to 4
 
         System.out.println("The sum of the numbers is " + sum);
         System.out.println("The product of the numbers is " + product);
