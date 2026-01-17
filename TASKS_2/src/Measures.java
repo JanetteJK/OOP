@@ -14,7 +14,6 @@ public class Measures {
 
 
 
-
         System.out.println(grams + " grams is " +leiviska+ " leiviskää, " +naula+ " naulaa and " +luoti+ "luotia");
     }
 }
