@@ -7,13 +7,17 @@ public class Measures {
         System.out.println("Give me a weight in grams: ");
         double grams = scanner.nextDouble();
 
-        double luoti = 13.28;
-        double naula = luoti *= 32;
-        double leiviska = grams /= (naula *= 20);
+        /*
+        luoti = 13.28 grammaa
+        naula = 32 luotia
+        leiviska = 20 naulaa
+        */
 
+        double gramsInLuoti = grams / 13.28;
+        double luotiInNaula = gramsInLuoti / 32;
+        double naulaInLeiviska = luotiInNaula / 20;
 
-
-
-        System.out.println(grams + " grams is " +leiviska+ " leiviskää, " +naula+ " naulaa and " +luoti+ "luotia");
+        System.out.println(grams + " grams is " +(int)naulaInLeiviska+ " leiviskää, "
+                +(int)luotiInNaula%20+ " naulaa and " +gramsInLuoti%32+ "luotia");
     }
 }
