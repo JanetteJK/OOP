@@ -17,7 +17,12 @@ public class Measures {
         double luotiInNaula = gramsInLuoti / 32;
         double naulaInLeiviska = luotiInNaula / 20;
 
-        System.out.println(grams + " grams is " +(int)naulaInLeiviska+ " leiviskää, "
-                +(int)luotiInNaula%20+ " naulaa and " +gramsInLuoti%32+ "luotia");
+        //System.out.printf("%.2f grams is %.0f leiviskää, %.0f naulaa, and %.2f luotia",
+               // grams, (int)naulaInLeiviska, (int)luotiInNaula%20, gramsInLuoti%32
+
+        System.out.printf(grams + " grams is " +(int)naulaInLeiviska+ " leiviskää, "
+                +(int)luotiInNaula%20+ " naulaa and %.2f luotia", gramsInLuoti%32);
+
+
     }
 }
