@@ -28,10 +28,9 @@ public class removingDuplicates {
                 uniqueInx++;
             }
         }
-
+        System.out.println("The array without duplicates: ");
         for (int i = 0; i < uniqueInx; i++){
-            System.out.println("The array without duplicates: ");
-            System.out.println(uniqueNumbers[i] + " ");
+            System.out.print(uniqueNumbers[i] + " ");
         }
 
 
