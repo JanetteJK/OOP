@@ -11,6 +11,7 @@ public class BinaryConverter {
         int ans;
 
         temp = String.valueOf(num);
+        System.out.println(temp);
         ans = Integer.parseInt(temp,2);
 
         System.out.println("Decimal of " + num + " is " + ans);

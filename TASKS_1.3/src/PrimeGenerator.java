@@ -24,7 +24,7 @@ public class PrimeGenerator {
                 i++;
             }
             if (prime) {
-                System.out.println(n);
+                System.out.print(n + "  ");
             }
 
         }
