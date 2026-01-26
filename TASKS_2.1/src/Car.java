@@ -1,6 +1,6 @@
 public class Car {
 
-    private double speed;
+    private int speed = 0;
     private double gasolineLevel;
     private String typeName;
     private double gasolineTankCapacity;
@@ -14,16 +14,17 @@ public class Car {
         gasolineLevel = 0;
         this.typeName = typeName;
         this.gasolineTankCapacity = gasolineTankCapacity;
-        cruiseControl = cruiseControl();
         targetSpeed = 0;
     }
 
     public void turnOn(int setting){
         if (setting == 0) {
             on = false;
+            System.out.println("Cruise control turned off.");
         }
         if (setting == 1) {
             on = true;
+            System.out.println("Cruise control turned on.");
         }
     }
 
@@ -56,7 +57,7 @@ public class Car {
             speed = 0;
     }
 
-    void decelerate(double amount) {
+    void decelerate(int amount) {
         if (gasolineLevel > 0) {
             if (amount > 0)
                 speed = Math.max(0, speed - amount);
@@ -64,7 +65,7 @@ public class Car {
             speed = 0;
     }
 
-    double getSpeed() {
+    int getSpeed() {
         return speed;
     }
 
