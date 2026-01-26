@@ -42,6 +42,7 @@ public class Library {
             if (book.getTitle().equals(title)) {
                 System.out.println(user.getName() +" borrowed " + title + ".");
                 user.borrowBook(book);
+                books.remove(book);
                 return;
             }
         }

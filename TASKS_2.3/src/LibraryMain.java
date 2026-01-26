@@ -34,6 +34,7 @@ public class LibraryMain {
 
         library.returnBook(book3, user1);
 
+        library.displayBooks();
 
 
 
