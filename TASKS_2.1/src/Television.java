@@ -24,6 +24,9 @@ public class Television {
         if (on){
             on = false;
         }
+        else {
+            on = true;
+        }
     }
 
     public int getChannel() {
