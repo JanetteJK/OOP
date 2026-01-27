@@ -7,8 +7,14 @@ public class CarDriver {
 
         myCar = new Car("Toyota Corolla", 80);
         myCar.fillTank();
-        myCar.turnOn(1);
+        myCar.turnOn(0);
 
+
+        System.out.println("Do you want to turn on cruise control? 1 to turn on, 0 to not.");
+        int get = scanner.nextInt();
+        if (get == 1) {
+            myCar.turnOn(1);
+        }
         while (myCar.cruiseControl()) {
             System.out.println("Set the speed for cruising: ");
             int speed = scanner.nextInt();
