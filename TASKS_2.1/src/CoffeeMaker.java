@@ -18,7 +18,11 @@ public class CoffeeMaker {
     }
 
     public void setAmount(int ml) {
-        amount = ml;
+        if (ml < 20 || ml > 300) {
+            System.out.println("Not enough water");
+        }else {
+            amount = ml;
+        }
     }
 
     boolean isOn(){
