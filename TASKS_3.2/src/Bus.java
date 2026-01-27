@@ -1,8 +1,8 @@
 public class Bus extends AbstractVehicle{
     private int capacity;
 
-    public Bus(String type, String fuel, int capacity){
-        super(type, fuel);
+    public Bus(String type, String fuel, int capacity, double fuelEfficiency){
+        super(type, fuel,fuelEfficiency);
         this.capacity = capacity;
     }
 

@@ -1,19 +1,11 @@
 public class Car extends AbstractVehicle{
     private String color;
 
-    public Car(String type, String fuel, String color){
-        super(type,fuel);
+    public Car(String type, String fuel, String color, double fuelEfficiency){
+        super(type,fuel,fuelEfficiency);
         this.color = color;
     }
 
-    @Override
-    public void start() {
-        System.out.println(type + " is starting..");
-    }
-    @Override
-    public void stop(){
-        System.out.println(type + " is stopping...");
-    }
     @Override
     public void getInfo(){
         System.out.println("Type: " + type);
