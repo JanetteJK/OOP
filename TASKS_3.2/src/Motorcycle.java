@@ -2,8 +2,7 @@ public class Motorcycle extends AbstractVehicle {
     private String color;
 
     public Motorcycle(String type, String fuel, String color){
-        this.type = type;
-        this.fuel = fuel;
+        super(type,fuel);
         this.color = color;
     }
 
