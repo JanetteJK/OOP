@@ -1,8 +1,8 @@
 public class Bus extends Car{
     private int passengers;
 
-    public Bus(String typeName, int gasolineTankCapacity){
-        super(typeName, gasolineTankCapacity);
+    public Bus(String typeName, int gasolineTankCapacity, double gasolineLevel, int speed, int breakGas, int gasConsumption){
+        super(typeName, gasolineTankCapacity, gasolineLevel, speed,breakGas, gasConsumption);
     }
     public void passengersEnter(int passenger){
         passengers = passengers + passenger;
