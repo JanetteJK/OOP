@@ -1,28 +1,17 @@
 public class Car {
-    private double gasolineLevel;
+    private int gasolineLevel;
     private String typeName;
-    private double gasolineTankCapacity;
+    private int gasolineTankCapacity;
     private int speed;
-    private int breakGas;
-    private int currentSpeed;
-    private int gasConsumption;
 
-
-    public Car(String typeName, double gasolineTankCapacity, double gasolineLevel, int speed, int breakGas, int gasConsumption) {
+    public Car(String typeName, int gasolineTankCapacity, int gasolineLevel, int speed) {
         this.typeName = typeName;
         this.gasolineTankCapacity = gasolineTankCapacity;
         this.speed = speed;
-        this.breakGas = breakGas;
         this.gasolineLevel = gasolineLevel;
-        this.gasConsumption = gasConsumption;
-        currentSpeed = 0;
-
-
-
-
     }
-    public int getCurrentSpeed() {
-        return currentSpeed;
+    protected void setSpeed(int newSpeed){
+        this.speed = newSpeed;
     }
 
     public String getTypeName() {
@@ -33,30 +22,34 @@ public class Car {
         gasolineLevel = gasolineTankCapacity;
     }
 
+    public int getSpeed(){
+        return speed;
+    }
+
     public double getGasolineLevel() {
         return gasolineLevel;
     }
 
     public void accelerate() {
-        if (gasolineLevel > gasConsumption) {
-            gasolineLevel -= gasConsumption;
-            currentSpeed += breakGas;
+        if (gasolineLevel > 0) {;
+            speed += 5;
+            gasolineLevel -=1;
         } else {
             System.out.println("Out of gas");
-            currentSpeed = 0;
+            speed = 0;
         }
 
     }
 
-    public void decelerate() {
-        if (gasolineLevel > gasConsumption) {
-            gasolineLevel -= gasConsumption;
-            if (breakGas > 0)
-                currentSpeed -= breakGas;
+    public void decelerate(int amount) {
+        if (gasolineLevel > 0) {
+            if (amount > 0){
+                speed = Math.max(0, speed - amount);
         } else {
             System.out.println("Out of gas");
-            currentSpeed = 0;
-        }
+            speed = 0;
+        }}
     }
+
 
 }
