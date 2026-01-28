@@ -16,9 +16,11 @@ public class CarDriver1 {
         myCar.targetSpeed(100);
         myCar.turnOnCruise();
 
-        while (myCar.isCruiseOn()){
+        while (myCar.isCruiseOn()) {
             myCar.cruiseControl();
         }
+
+        myCar.turnOffCruise();
 
     }
 }
