@@ -20,7 +20,6 @@ public class CarDriver1 {
             myCar.cruiseControl();
         }
 
-        myCar.turnOffCruise();
 
     }
 }
