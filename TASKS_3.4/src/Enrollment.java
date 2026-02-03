@@ -1,25 +1,27 @@
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 
 public class Enrollment implements Serializable {
     private String enrollmentDate;
+    private Student student;
+    private Course course;
 
 
-    public Enrollment(Student student, Course course, String enrollmentDate){
+    public Enrollment(Student student, Course course, String enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
-        Student student1 = student;
-        Course course1 = course;
+        this.student = student;
+        this.course = course;
+
 
     }
 
-    public String getEnrollmentDate(){
+    public String getEnrollmentDate() {
         return enrollmentDate;
     }
 
     @Override
-    }
-    public String toString(){
+    public String toString() {
         return "Student: " + student + "\nCourse: " + course + "\nEnrollment date: " + getEnrollmentDate() + "\n";
     }
 }
+
+

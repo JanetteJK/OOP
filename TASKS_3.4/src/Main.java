@@ -3,9 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[]args){
         File file = new File("TASKS_3.4/src/enrollments.ser");
-        Student student;
-        Course course;
-        Enrollment enrollment;
+
 
 
         Student s1 = new Student(1, "Tony G.", 20);
@@ -16,12 +14,12 @@ public class Main {
         Course c2 = new Course("6969", "Feminine Men In Dresses", "Paul Rupert");
         Course c3 = new Course("1111", "Religious symbolism", "Jesus Christopher");
 
-        Enrollment e1 = new Enrollment(s2,c1,"1.1.2001");
+        Enrollment e1 = new Enrollment(s1,c1,"1.1.2001");
         Enrollment e2 = new Enrollment(s1,c3,"1.2.2002");
-        Enrollment e3 = new Enrollment(s2,c2, "1.10.2006");
+        Enrollment e3 = new Enrollment(s1,c2, "1.10.2006");
 
         try (
-                FileOutputStream outputstream = new FileOutputStream("TASKS_3.4/src/enrollments.ser");
+                FileOutputStream outputstream = new FileOutputStream("enrollments.ser");
                 ObjectOutputStream objects = new ObjectOutputStream(outputstream);
                 ){
                 objects.writeObject(s1);
@@ -42,14 +40,25 @@ public class Main {
                     FileInputStream inputstream = new FileInputStream("enrollments.ser");
                     ObjectInputStream objects = new ObjectInputStream(inputstream);
                     ){
-                s1 = (Student) objects.readObject();
+                s1 = (Student)objects.readObject();
                 s2 = (Student) objects.readObject();
+                s3 = (Student) objects.readObject();
                 c1 = (Course) objects.readObject();
+                c2 = (Course) objects.readObject();
+                c3 = (Course) objects.readObject();
                 e1 = (Enrollment) objects.readObject();
+                e2 = (Enrollment) objects.readObject();
+                e3 = (Enrollment) objects.readObject();
+
+                /*s1 = (Student) objects.readObject();
+                s2 = (Student) objects.readObject();
+                e1 = (Enrollment) objects.readObject();
+
+                 */
             }catch (Exception e){
                 System.err.println("Reading: ");
             }
         }
-        System.out.println(c1 + "\n" + s1 + "\n" + s2 + "" + e1);
+        System.out.println("STUDENTS:\n"+s1 + "\n" + s2 + "\n" + s3 + "\nCOURSES:\n" + c1 + "\n" + c2 + "\n" + c3 + "\nENROLLMENTS:\n" +e1+ "\n" +e2+ "\n" +e3 );
     }
 }
