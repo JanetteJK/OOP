@@ -20,7 +20,4 @@ public class PetController {
     public int getPetY(){
         return pet.getY();
     }
-    public int getGridSize(){
-        return pet.getGridSize();
-    }
 }

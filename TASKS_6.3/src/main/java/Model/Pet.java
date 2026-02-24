@@ -3,7 +3,6 @@ package Model;
 public class Pet {
     private int x;
     private int y;
-    private static final int GRID_SIZE = 30;
 
     public Pet(int x, int y){
         this.x = x;
@@ -19,7 +18,4 @@ public class Pet {
         return y;
     }
 
-    public int getGridSize(){
-        return GRID_SIZE;
-    }
 }
