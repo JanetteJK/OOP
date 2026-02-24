@@ -1,0 +1,15 @@
+.root {
+    -fx-padding: 20px;
+    -fx-spacing: 30px;
+    -fx-font-family: "Agency FB";
+    -fx-font-size: 15px;
+
+}
+
+.button {
+    -fx-padding: 5px;
+    -fx-spacing: 30px;
+    -fx-background-color: #d021aa;
+    -fx-font-size: 15px;
+
+}
