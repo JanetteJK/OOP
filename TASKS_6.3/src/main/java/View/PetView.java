@@ -2,6 +2,7 @@ package View;
 import Controller.PetController;
 import Model.Pet;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,41 +21,35 @@ public class PetView extends Application {
     private Image image;
     private Pet pet;
 
-
-
     @Override
     public void start(Stage screen) {
-        pet = new Pet(100,20);
-        controller = new PetController();
-        image = new Image("Cat.png");
-
         screen.setTitle("Your little pet");
-
-        canvas = new Canvas(CANVAS_SIZE,CANVAS_SIZE);
+        pet = new Pet(100,20);
+        controller = new PetController(pet);
+        canvas = new Canvas();
         gc = canvas.getGraphicsContext2D();
-
-
-        StackPane root = new StackPane(canvas);
-        Scene scene = new Scene(root, CANVAS_SIZE, CANVAS_SIZE);
-
+        Group root = new Group();
         root.getChildren().add(canvas);
 
+        canvas.setOnMouseMoved(event -> {
+            System.out.println("liikutaan");
 
+            updateScreen();
+        });
 
-        update();
+        image = new Image("Cat.png");
+        updateScreen();
+
+        Scene scene = new Scene(root);
         scene.setFill(Color.DARKGREEN);
-
-
         screen.setScene(scene);
+
+
         screen.show();
     }
 
-
-
-    private void update(){
-        gc.clearRect(0,0, CANVAS_SIZE, CANVAS_SIZE);
-        gc.drawImage(image, controller.getPetX(), controller.getPetY());
+    private void updateScreen(){
+        gc.clearRect(0,0,CANVAS_SIZE,CANVAS_SIZE);
+        gc.drawImage(image, pet.x, pet.y);
     }
-
-
 }

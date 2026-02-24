@@ -1,13 +1,12 @@
 package Model;
 
 public class Pet {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public Pet(int x, int y){
         this.x = x;
         this.y = y;
-
     }
 
     public int getX(){
