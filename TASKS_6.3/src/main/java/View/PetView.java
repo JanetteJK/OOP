@@ -14,7 +14,7 @@ import javafx.scene.image.Image;
 
 public class PetView extends Application {
 
-    private static final int CANVAS_SIZE = 500;
+    private static final int CANVAS_SIZE = 700;
     private Canvas canvas;
     private GraphicsContext gc;
     private PetController controller;
@@ -26,14 +26,14 @@ public class PetView extends Application {
         screen.setTitle("Your little pet");
         pet = new Pet(100,20);
         controller = new PetController(pet);
-        canvas = new Canvas();
+        canvas = new Canvas(CANVAS_SIZE,CANVAS_SIZE);
         gc = canvas.getGraphicsContext2D();
         Group root = new Group();
         root.getChildren().add(canvas);
 
         canvas.setOnMouseMoved(event -> {
             System.out.println("liikutaan");
-
+            controller.movePet((int)event.getX() - pet.x, (int) event.getY() - pet.y);
             updateScreen();
         });
 
