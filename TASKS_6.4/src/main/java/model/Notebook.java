@@ -1,22 +1,22 @@
 package model;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Notebook {
-        private HashMap<String, String> notes;
+        private ArrayList<Note> notes;
 
     public Notebook(){
-        notes = new HashMap<>();
+        notes = new ArrayList<>();
     }
 
-    public String getNote(String title){
-        if (notes.containsKey(title)){
-            return notes.get(title);
+    public ArrayList<Note> getNotes(){
+            return notes;
         }
-        else return "No such title";
-    }
+
+
     public void addNote(Note note){
-        notes.put(note.getTitle(), note.getText());
+        notes.add(note);
     }
 }

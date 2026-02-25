@@ -6,18 +6,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NotebookController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NotebookController">
    <center>
       <VBox alignment="CENTER" prefHeight="225.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField id="textField" alignment="CENTER" promptText="WRITE TITLE OF NOTE" />
-            <TextArea id="textArea" prefHeight="200.0" prefWidth="200.0" promptText="Here you can write your note" />
-            <Button id="button" alignment="BOTTOM_RIGHT" mnemonicParsing="false" text="ADD" />
+            <TextField fx:id="textField" alignment="CENTER" promptText="WRITE TITLE OF NOTE" />
+            <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" promptText="Here you can write your note" />
+            <TextArea fx:id="writtenNotes" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="button" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onMouseClicked="#createNote" text="ADD" />
             
          </children>
       </VBox>
    </center>
-   <bottom>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-   </bottom>
-</fx:root>
+</BorderPane>
