@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TASKS_6.4" />
         <module name="TASKS_6.3" />
         <module name="TASKS_6.2" />
       </profile>
