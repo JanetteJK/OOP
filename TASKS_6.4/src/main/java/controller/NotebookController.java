@@ -8,6 +8,8 @@ import model.Notebook;
 import model.Note;
 import view.NotebookView;
 
+import java.util.ArrayList;
+
 public class NotebookController {
     Notebook notebook = new Notebook();
     @FXML
@@ -34,17 +36,12 @@ public class NotebookController {
     }
 
     private void getNotes() {
-        /*for (int i = 0; i < notebook.getNotes().size(); i++);{
+        for (int i = 0; i < notebook.getNotes().size(); i++);{
             System.out.println(notebook.getNotes());
-            writtenNotes.setText(notebook.getNotes() + " \n");
+            writtenNotes.setText("Saved notes: \n" + notebook.getNotes());
 
         }
-         */
-        for (Note note : notebook.getNotes()) {
-            System.out.println(note.getTitle() + ": " + note.getText());
-            String text = note.getTitle() + ": " + note.getText();
-            writtenNotes.setText(text);
-        }
+
 
     }
 }
